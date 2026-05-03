@@ -1,0 +1,369 @@
+.aiw-container {
+  z-index: 9999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  position: fixed;
+}
+
+.aiw-widget {
+  position: fixed;
+  z-index: 9999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.aiw-br { bottom: 20px; right: 20px; }
+.aiw-bl { bottom: 20px; left: 20px; }
+.aiw-tr { top: 20px; right: 20px; }
+.aiw-tl { top: 20px; left: 20px; }
+
+.aiw-toggle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.aiw-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.aiw-window {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 380px;
+  height: 600px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: aiwSlideUp 0.3s ease;
+}
+
+@keyframes aiwSlideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.aiw-main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+}
+
+.aiw-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  color: white;
+}
+
+.aiw-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.aiw-badge {
+  font-size: 11px;
+  background: rgba(255,255,255,0.2);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.aiw-header-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.aiw-header-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.aiw-header-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.aiw-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aiw-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #9ca3af;
+}
+
+.aiw-empty-icon {
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.aiw-msg {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.aiw-msg-user {
+  flex-direction: row-reverse;
+}
+
+.aiw-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.aiw-msg-assistant .aiw-avatar {
+  background: #3b82f6;
+  color: white;
+}
+
+.aiw-msg-content {
+  max-width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.aiw-bubble {
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.aiw-msg-user .aiw-bubble {
+  background: #3b82f6;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.aiw-msg-assistant .aiw-bubble {
+  background: #f3f4f6;
+  color: #1f2937;
+  border-bottom-left-radius: 4px;
+}
+
+.aiw-bubble p {
+  margin: 0;
+}
+
+.aiw-bubble code {
+  background: rgba(0,0,0,0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.aiw-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ef4444;
+}
+
+.aiw-time {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.aiw-cursor {
+  animation: aiwBlink 1s infinite;
+  color: #3b82f6;
+}
+
+@keyframes aiwBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.aiw-sources {
+  margin-top: 8px;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.aiw-sources-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.aiw-source-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.aiw-source-index {
+  color: #3b82f6;
+}
+
+.aiw-source-title {
+  color: #374151;
+}
+
+.aiw-source-score {
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+.aiw-input-area {
+  display: flex;
+  align-items: flex-end;
+  padding: 12px 16px;
+  border-top: 1px solid #e5e7eb;
+  gap: 8px;
+  background: #fff;
+}
+
+.aiw-input-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.aiw-input-btn:hover:not(:disabled) {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.aiw-input-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aiw-textarea {
+  flex: 1;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 10px 16px;
+  font-size: 14px;
+  resize: none;
+  max-height: 120px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.aiw-textarea:focus {
+  border-color: #3b82f6;
+}
+
+.aiw-send-btn {
+  background: #3b82f6;
+  color: white;
+}
+
+.aiw-send-btn:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.aiw-spin {
+  animation: aiwSpin 1s linear infinite;
+}
+
+@keyframes aiwSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-color-scheme: dark) {
+  .aiw-main,
+  .aiw-window {
+    background: #1f2937;
+    color: #f3f4f6;
+  }
+
+  .aiw-msg-user .aiw-bubble {
+    background: #3b82f6;
+  }
+
+  .aiw-msg-assistant .aiw-bubble {
+    background: #374151;
+    color: #f3f4f6;
+  }
+
+  .aiw-header-btn:hover {
+    background: rgba(255,255,255,0.1);
+  }
+
+  .aiw-input-area {
+    border-color: #374151;
+    background: #1f2937;
+  }
+
+  .aiw-textarea {
+    background: #374151;
+    border-color: #4b5563;
+    color: #f3f4f6;
+  }
+
+  .aiw-textarea:focus {
+    border-color: #3b82f6;
+  }
+
+  .aiw-input-btn {
+    background: #374151;
+    color: #9ca3af;
+  }
+
+  .aiw-sources {
+    background: #374151;
+  }
+}

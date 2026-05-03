@@ -1,0 +1,80 @@
+{
+  "name": "@daddy_chentao/rag-chat-widget",
+  "version": "1.0.0",
+  "description": "React AI Chat Widget with RAG support - 一键集成AI聊天功能",
+  "type": "module",
+  "main": "./dist/ai-chat-widget.umd.cjs",
+  "module": "./dist/ai-chat-widget.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/ai-chat-widget.js",
+      "require": "./dist/ai-chat-widget.umd.cjs",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:watch": "vite build --watch",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "lucide-react": "^1.14.0",
+    "react-markdown": "^10.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.12.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "esbuild": "^0.28.0",
+    "eslint": "^10.2.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.58.2",
+    "vite": "^8.0.10",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "keywords": [
+    "react",
+    "chat",
+    "widget",
+    "ai",
+    "rag",
+    "floating",
+    "assistant",
+    "chatbot",
+    "streaming",
+    "websocket"
+  ],
+  "author": "陈涛 <chen_tao@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/ai-chat-widget.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/ai-chat-widget/issues"
+  },
+  "homepage": "https://github.com/your-username/ai-chat-widget#readme"
+}
