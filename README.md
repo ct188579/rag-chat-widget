@@ -64,7 +64,6 @@ export default function App() {
 # 安装依赖
 pip3 install -r requirements.txt
 # 启动后端
-cd backend
 uvicorn app.main:app --reload
 ```
 
